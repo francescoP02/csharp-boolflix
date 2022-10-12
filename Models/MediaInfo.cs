@@ -8,11 +8,11 @@ public class MediaInfo
     //public string VideoQuality { get; set; }
 
 
-    //1 a 1 su media content (film) , un media content può essere un film
+    //1 a 1 su media content (film)
     public int? FilmId { get; set; }
     public Film? Film { get; set; }
 
-    //1 a 1 su media content (serie) , un media content può essere una serie
+    //1 a 1 su media content (serie)
     public int? TvSeriesId { get; set; }
     public TvSerie? TvSeries { get; set; }
 

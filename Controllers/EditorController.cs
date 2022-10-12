@@ -1,4 +1,5 @@
 ﻿using csharp_boolflix.Controllers.Context;
+using csharp_boolflix.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace csharp_boolflix.Controllers
@@ -6,10 +7,10 @@ namespace csharp_boolflix.Controllers
     public class EditorController : Controller
     {
         
-        BoolflixDbContext db;
+        private BoolflixDbContext _db;
         public EditorController()
         {
-            db = new BoolflixDbContext();
+            _db = new BoolflixDbContext();
         }
         public IActionResult Index()
         {
@@ -29,11 +30,13 @@ namespace csharp_boolflix.Controllers
         }
         public IActionResult Genres()
         {
-            return View();
+            List<Genre> genres = _db.Genres.ToList();
+            return View(genres);
         }
         public IActionResult Features()
         {
-            return View(db.Features.ToList());
+            List<Feature> features = _db.Features.ToList();
+            return View(features);
         }
     }
 }

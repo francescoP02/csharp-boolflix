@@ -4,10 +4,11 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<MediaInfo> MediaInfos { get; set; }
+        public List<MediaInfo>? MediaInfos { get; set; }
+
         public Feature()
         {
-
+            MediaInfos = new List<MediaInfo>();
         }
     }
 }
