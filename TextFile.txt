@@ -1,0 +1,69 @@
+﻿#csharp-boolflix
+
+#analisi
+
+##Entità (Entity Framework, Database, Model)
+
+- Profili: Utente che sfoglia il catalogo e riproduce i *contenuti multimediali*
+
+- Account: Contiene le informazioni di pagamento e il numero di *profili* identificati
+
+- ContenutoMultimediale (Media): 
+	- Anno
+	- Novità (true|false)
+	- Qualità del video
+	- PEGI:
+	- Tipologia: 
+		- Serie TV: 
+			- numero di stagioni (conteggio di tutte le stagioni di questa serie)
+			- lista di episodi: *contenuti multimediali*
+			- Stagioni: (???)
+				- Episodio:
+					-numero di stagione di appartenenza nella serie
+		- Film:
+			- Durata
+
+	- Cast: lista di attori
+	- Generi: lista di parole che identificano un genere
+	- Caratteristiche: lista di parole che specificano una caratteristica del *contenuto multimediale*
+
+- Valutazione dei contenuti:
+	- Non fa per me
+	- Mi piace
+	-Lo adoro!
+
+##Interazioni (Controller, Navigazioni, Link, Interfaccia utente UI)
+
+
+
+##Elementi Grafici (Layout, Views, Partial, Interfaccia grafica)
+
+###Layout Home:
+
+- Header: 
+	- Logo
+	- Menu Sinistra: Home, Serie TV, Nuovi e popolari, La mia lista, Sfoglia per lingua
+	- Menu Destra: Ricerca, Bambini, Notifiche, Profilo
+
+- Content: 
+	- Visore centrale con *contenuti multimediali* in evidenza
+	- Lista di contenuti (*playlist*) divise per *categoria*
+
+- Footer: 
+	- riga di social
+	- riga 4 colonne
+	- riga codice servizio
+	- riga copyright
+
+###Layout Serie TV e Film: è uguale a LayoutHome
+	- Select box filtro genere
+
+##component o partial
+
+Contenuto multimediale:
+- Contenuto multimediale (Media):
+	- Se è una serie: 
+		- Se il numero di stagioni è 1 visualizza il numero di episodi della stagione
+		  altrimenti (numero di stagioni > 1) visualizza il numero di stagioni
+		- Se è un film:
+			- visualizzo la durata del film
