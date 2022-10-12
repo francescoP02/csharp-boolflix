@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_EditorLayout";
+    @model Actor
+
+}
+
+<h2>Edit your actor</h2>
+<form asp-controller="Actor" asp-action="Update" asp-route-id="@Model.Id" method="post">
+    @Html.AntiForgeryToken()
+    <div class="mb-3">
+        <label for="name" class="form-label">Actor's Name</label>
+        <input class="form-control" id="name" asp-for="Name">
+        <span class="text-danger" asp-validation-for="Name"></span>
+        <label for="surname" class="form-label">Actor's Surname</label>
+        <input class="form-control" id="surname" asp-for="Surname">
+        <span class="text-danger" asp-validation-for="Surname"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>

@@ -8,7 +8,7 @@
         public List<MediaInfo>? MediaInfos { get; set; }
         public Actor()
         {
-
+            MediaInfos = new List<MediaInfo>();
         }
     }
 }

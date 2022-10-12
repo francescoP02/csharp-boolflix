@@ -26,7 +26,8 @@ namespace csharp_boolflix.Controllers
         }
         public IActionResult Actors()
         {
-            return View();
+            List <Actor> actors = _db.Actors.ToList();
+            return View(actors);
         }
         public IActionResult Genres()
         {
